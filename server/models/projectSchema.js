@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
-
+const moment = require('moment')
 const notesSchema = new mongoose.Schema({
   userid: { type: mongoose.SchemaTypes.ObjectId },
   title: { type: String },
-  note: { type: String },
-  time: { type: String, default: Date.now() },
+  description: { type: String },
+  freelancers:[],
+  time: { type: String, default: moment().format() },
 });
 
 const model = mongoose.model("Notes", notesSchema);

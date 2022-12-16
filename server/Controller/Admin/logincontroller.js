@@ -11,6 +11,7 @@ exports.adminloginpost = async (req, res) => {
         console.log(err);
         if (resp) {
           const details = {
+            _id:data._id,
             email: data.email,
             token: generateToken(data._id),
           };

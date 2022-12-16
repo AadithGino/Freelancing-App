@@ -1,7 +1,7 @@
 const { json } = require("express");
 const { NotBeforeError } = require("jsonwebtoken");
 const userSchema = require("../../models/userSchema");
-const notesSchema = require("../../models/notesSchema");
+const notesSchema = require("../../models/projectSchema");
 
 exports.searchUser = async (req, res) => {
   try {

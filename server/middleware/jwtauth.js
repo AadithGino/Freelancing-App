@@ -12,7 +12,7 @@ const protect = asynchandler(async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
       console.log(token + "This is the token...");
-      const decoded = jwt.verify(token, "noteapp1234");
+      const decoded = jwt.verify(token, "noteapp1234");  // this noteapp1234 should be in env (but for now it is being added here )
       req.user = await user.findById(decoded.id).select("-password");
       console.log("Valid Token ");
       next();

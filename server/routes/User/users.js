@@ -16,18 +16,24 @@ router.post("/login", userLogin.loginPost);
 router.route("/profile").get(protect, userprofile.profileGet);
 
 //HOME
-router.route("/").get(protect, userLogin.HOMEGET);
+router.route("/").get(protect, userLogin.HOMEGET); 
 
-//add notes
-router.route("/add-notes").post(protect, usernote.addNotesPost);
+//add project
+router.route("/add-project").post(protect, usernote.addNotesPost);
 
-//get notes
-router.route("/my-notes").get(protect, usernote.getNotesPost);
+//get project
+router.route("/my-project").get(protect, usernote.getNotesPost);
 
-//delete notes
-router.route("/delete-note").get(protect, usernote.deletenote);
+//delete project
+router.route("/delete-project").get(protect, usernote.deletenote);
 
 //add photo
 router.route("/profile-photo").post(protect, userLogin.addPhoto);
+
+
+router.route("/add-project").post(protect, usernote.addNotesPost);
+
+//view single project 
+router.route("/view-single-project").get(protect,usernote.singleprojectview)
 
 module.exports = router;
